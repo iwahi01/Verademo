@@ -79,7 +79,7 @@ public class UserController {
 			connect = DriverManager.getConnection(dbConnStr);
 
 			/* START BAD CODE */
-			// Execute the query
+			// Execute the query---
 			logger.info("Creating the Statement");
 			String sqlQuery = "select * from users where username='" + username + "' and password='" + password + "';";
 			sqlStatement = connect.createStatement();
@@ -87,7 +87,7 @@ public class UserController {
 			ResultSet result = sqlStatement.executeQuery(sqlQuery);
 			/* END BAD CODE */
 
-			// Did we find exactly 1 user that matched?
+			// Did we find exactly 1 user that matched?----
 			if (result.first()) {
 				// OK we have found the user, lets setup their Session object
 				logger.info("User Found. Setting up UserSession object");
